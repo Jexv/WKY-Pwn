@@ -52,7 +52,7 @@ S805 类似架构设备等·····
 sudo apt update
 sudo apt install git -y
 sudo rm -r WKY-Pwn
-git clone https://github.com/Mintneko/WKY-Pwn 
+git clone https://github.com/Jexv/WKY-Pwn 
 sudo mkdir /boot/firmware/
 cd WKY-Pwn
 sudo cp -r PPPwn /boot/firmware/
@@ -67,7 +67,7 @@ bash <(curl -sSL https://linuxmirrors.cn/main.sh)  #选1即可
 sudo apt update
 sudo apt install git unzip wget -y
 sudo rm -r WKY-Pwn-main main.zip WKY-Pwn
-wget https://mirror.ghproxy.com/https://github.com/Mintneko/WKY-Pwn/archive/refs/heads/main.zip  && unzip main.zip
+wget https://mirror.ghproxy.com/https://github.com/Jexv/WKY-Pwn/archive/refs/heads/main.zip  && unzip main.zip
 sudo mkdir /boot/firmware/
 cd WKY-Pwn-main
 sudo cp -r PPPwn /boot/firmware/
