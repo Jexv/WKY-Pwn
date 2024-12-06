@@ -1,7 +1,12 @@
 # WKY Pwn
 
-这个脚本是来自于 <a href=https://github.com/TheOfficialFloW/PPPwn>PPPwn</a> and <a href=https://github.com/xfangfang/PPPwn_cpp>PPPwn_cpp</a> 关于针对 Amlogic S805来运行 <a href=https://github.com/GoldHEN/GoldHEN>GoldHen</a> 在PS4 的 11.0, 10.01, 10.00, 9.00版本进行自动化运行<br>
+这个脚本是由 Mintneko
+ 自于 <a href=https://github.com/TheOfficialFloW/PPPwn>PPPwn</a> and <a href=https://github.com/xfangfang/PPPwn_cpp>PPPwn_cpp</a> 关于针对 Amlogic S805来运行 <a href=https://github.com/GoldHEN/GoldHEN>GoldHen</a> 在PS4 的 11.0, 10.01, 10.00, 9.00版本进行自动化运行<br>
 该脚本基本由[PI-Pwn](https://github.com/stooged/PI-Pwn)来修改而成。
+
+后由 Roll8ack 大佬整合了以上两个最新的支持 9.60, 10.50, 10.70, 10.71 的代码，包括PPPwn_cpp 2024/11 的最新的c语音版的pppwn命令
+
+本人只是在实践中发现，使用部分镜像站，可能会拉取老代码，导致玩客云破解后无法休眠，容易导致机器断电等情况。因此fork后，做部分说明，并且考虑到很多默认选项很少修改，增加了简化的配置脚本。方便快速配置。当然批量推荐配置好一台机器后，使用dd命令备份img，直接刷入新机器。直接开启量产，hhh
 
 ~~PS：为什么淘宝会有399的商家去卖PS4的自动破解工具？？？~~
 
@@ -60,16 +65,15 @@ cd /boot/firmware/PPPwn
 sudo chmod 777 *
 sudo bash install.sh
 ```
-### 中国大陆用户可以执行以下汉化脚本
+### 中国大陆用户可以执行以下汉化脚本（镜像代码可能有问题，源代码改为继续直接从github获取，可能会失败，但是一般重试都能解决）
 ```sh
 sudo cp /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime #修改时区为中国大陆  
 bash <(curl -sSL https://linuxmirrors.cn/main.sh)  #选1即可
 sudo apt update
-sudo apt install git unzip wget -y
-sudo rm -r WKY-Pwn-main main.zip WKY-Pwn
-wget https://mirror.ghproxy.com/https://github.com/Jexv/WKY-Pwn/archive/refs/heads/main.zip  && unzip main.zip
+sudo rm -r WKY-Pwn
+git clone https://github.com/Jexv/WKY-Pwn 
 sudo mkdir /boot/firmware/
-cd WKY-Pwn-main
+cd WKY-Pwn
 sudo cp -r PPPwn /boot/firmware/
 cd /boot/firmware/PPPwn
 sudo chmod 777 *
@@ -96,11 +100,10 @@ sudo bash install_ch.sh
 sudo cp /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime #修改时区为中国大陆  
 bash <(curl -sSL https://linuxmirrors.cn/main.sh)  #选1即可
 sudo apt update
-sudo apt install git unzip wget -y
-sudo rm -r WKY-Pwn-main main.zip WKY-Pwn
-wget https://mirror.ghproxy.com/https://github.com/Jexv/WKY-Pwn/archive/refs/heads/main.zip  && unzip main.zip
+sudo rm -r WKY-Pwn
+git clone https://github.com/Jexv/WKY-Pwn 
 sudo mkdir /boot/firmware/
-cd WKY-Pwn-main
+cd WKY-Pwn
 sudo cp -r PPPwn /boot/firmware/
 cd /boot/firmware/PPPwn
 sudo chmod 777 *
