@@ -77,6 +77,8 @@ sudo bash install_ch.sh
 ```
 <br>
 
+
+
 在安装过程中，您将被要求设置一些选项.<br>
 
 如果您使用USB 转以太网适配器连接到控制台，则需要选择 yes
@@ -85,6 +87,26 @@ sudo bash install_ch.sh
 如果您选择使用 PPPwn 的 Python，它会慢得多，特别是在 S805的设备上 。
 
 一旦 玩客云 重新启动，pppwn 将自动运行。
+
+另外提供简易安装方式
+### 中国大陆 简易安装，默认账户/密码 ppp/ppp，默认eth0，默认不联网，自动关机，使用c语言版本
+<br>
+
+```sh
+sudo cp /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime #修改时区为中国大陆  
+bash <(curl -sSL https://linuxmirrors.cn/main.sh)  #选1即可
+sudo apt update
+sudo apt install git unzip wget -y
+sudo rm -r WKY-Pwn-main main.zip WKY-Pwn
+wget https://mirror.ghproxy.com/https://github.com/Jexv/WKY-Pwn/archive/refs/heads/main.zip  && unzip main.zip
+sudo mkdir /boot/firmware/
+cd WKY-Pwn-main
+sudo cp -r PPPwn /boot/firmware/
+cd /boot/firmware/PPPwn
+sudo chmod 777 *
+sudo bash install_ch_simply.sh
+```
+<br>
 
 
 ## On your PS4:<br>
